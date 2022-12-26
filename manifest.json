@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Scripting Experiments",
+    "description": "Experimenting w/ Scripts",
+    "uuid": "fffd8ffe-c27d-410a-bf0d-b1423d064265",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 17, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "8254e81d-3983-4084-b2d4-94c434d45502",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "676323d3-05c7-492b-8d24-2008b861efbe",
+      "version": [0, 0, 1],
+      "entry": "scripts/Main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.1.0-beta"
+    }
+  ]
+}
