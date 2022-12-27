@@ -1,6 +1,6 @@
 import "./ReloadScript";
 import "./HitTest.js";
-
+import {overworld} from '../Exports';
 import {world} from "@minecraft/server";
 
 let playing = false;
@@ -14,7 +14,7 @@ world.events.beforeChat.subscribe(async (eventData) => {
 		case '!stop':
 			eventData.cancel = true;
 			playing = false;
-			try {world.getDimension("overworld").runCommandAsync("tag @a remove it");} catch{}
+			try {overworld.runCommandAsync("tag @a remove it");} catch{}
 			world.say("§2Tag Game Stopped");
 			break;
 		default: break;
@@ -23,18 +23,18 @@ world.events.beforeChat.subscribe(async (eventData) => {
 
 async function setup() {
 	world.say("§bSetting up tag game \nCreated by Gassayping");
-	try {await world.getDimension("overworld").runCommandAsync("tag @a remove it");} catch{}
-	await world.getDimension("overworld").runCommandAsync("tag @r add it");
-	await world.getDimension("overworld").runCommandAsync("title @a times 1 7 3");
-	await world.getDimension("overworld").runCommandAsync("say §4§l@a[tag=it] is it!");
+	try {await overworld.runCommandAsync("tag @a remove it");} catch{}
+	await overworld.runCommandAsync("tag @r add it");
+	await overworld.runCommandAsync("title @a times 1 7 3");
+	await overworld.runCommandAsync("say §4§l@a[tag=it] is it!");
 	playing = true;
 }
 
 world.events.tick.subscribe(async (e) =>{
 	if(playing){
 		let nearest;
-		world.getDimension("overworld").runCommandAsync("title @a[tag=!it] actionbar §e@a[tag=it] is it!");
-		try{nearest = (await world.getDimension("overworld").runCommandAsync("execute as @a[tag=it] run testfor @p[tag=!it]"))} catch (e) {console.warn(e)}
-		world.getDimension("overworld").runCommandAsync(`say ${nearest.nameTag}`);
+		overworld.runCommandAsync("title @a[tag=!it] actionbar §e@a[tag=it] is it!");
+		try{nearest = (await overworld.runCommandAsync("execute as @a[tag=it] run testfor @p[tag=!it]"))} catch (e) {console.warn(e)}
+		overworld.runCommandAsync(`say ${nearest.nameTag}`);
 	}
 })
