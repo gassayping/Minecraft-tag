@@ -34,7 +34,7 @@ world.events.tick.subscribe(async (e) =>{
 	if(playing){
 		let nearest;
 		world.getDimension("overworld").runCommandAsync("title @a[tag=!it] actionbar §e@a[tag=it] is it!");
-		try{nearest = JSON.stringify((await world.getDimension("overworld").runCommandAsync("execute as @a[tag=it] run testfor @p[tag=!it]")))} catch (e) {console.warn(e)}
+		try{nearest = (await world.getDimension("overworld").runCommandAsync("execute as @a[tag=it] run testfor @p[tag=!it]"))} catch (e) {console.warn(e)}
 		world.getDimension("overworld").runCommandAsync(`say ${nearest.nameTag}`);
 	}
 })
