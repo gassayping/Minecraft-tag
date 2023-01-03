@@ -1,5 +1,5 @@
-import {world} from '@minecraft/server';
-import {overworld} from '../Exports';
+import {world} from "@minecraft/server";
+import {overworld} from "./Exports";
 
 world.events.entityHit.subscribe(event => (entityHitEvent(event)));
 

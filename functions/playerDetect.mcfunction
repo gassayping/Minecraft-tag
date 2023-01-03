@@ -1,0 +1,1 @@
+execute as @a[tag=it] at @s run tag @p[tag=!it] add nearest

@@ -1,11 +1,11 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Scripting Experiments",
-    "description": "Experimenting w/ Scripts",
+    "name": "Minecraft Tag",
+    "description": "Tag game for Minecraft with customizable settings",
     "uuid": "fffd8ffe-c27d-410a-bf0d-b1423d064265",
     "version": [0, 0, 1],
-    "min_engine_version": [1, 17, 0]
+    "min_engine_version": [1, 19, 50]
   },
   "modules": [
     {
