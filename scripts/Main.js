@@ -1,4 +1,3 @@
-import "./ReloadScript";
 import "./HitTest.js";
 import {overworld} from "./Exports";
 import {world} from "@minecraft/server";
